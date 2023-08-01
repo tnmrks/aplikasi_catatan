@@ -122,3 +122,8 @@ public class AplikasiCatatan {
 }
 
 
+//note
+//anggota
+//1.Faizal Duta
+//2.Feldo Razzan Susdiantoro
+//3.

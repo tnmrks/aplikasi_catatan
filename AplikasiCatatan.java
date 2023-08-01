@@ -120,3 +120,8 @@ public class AplikasiCatatan {
         }
     }
 }
+
+
+//Anggota kelompok
+//1.Faizal Duta
+//2.Feldo Razzan Susdiantoro

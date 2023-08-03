@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Catatan {
-    private String judul;
-    private String isi;
+//abstract
+abstract class Catatan {
+    protected String judul;
+    protected String isi;
 
     public Catatan(String judul, String isi) {
         this.judul = judul;
@@ -18,14 +19,29 @@ class Catatan {
         return isi;
     }
 
-    public void setIsi(String isi) {
+    abstract void setIsi(String isi); 
+}
+
+//inheritance
+class IsiCatatan extends Catatan {
+    IsiCatatan(String judul, String isi){
+        super(judul,isi);
+    }
+
+    //override
+    @Override
+    void setIsi(String isi){
         this.isi = isi;
+    }
+    //overloading
+    void setIsi(){
+        System.out.println("Catatan berhasil ditambahkan!");
     }
 }
 
 public class AplikasiCatatan {
-    private static ArrayList<Catatan> daftarCatatan = new ArrayList<>();
-    private static Scanner scanner = new Scanner(System.in);
+    protected static ArrayList<Catatan> daftarCatatan = new ArrayList<>();
+    static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         boolean berjalan = true;
@@ -62,7 +78,7 @@ public class AplikasiCatatan {
         System.out.println("Terima kasih telah menggunakan Aplikasi Pengelolaan Catatan!");
     }
 
-    private static void tambahCatatan() {
+    protected static void tambahCatatan() {
         System.out.print("Masukkan judul catatan: ");
         String judul = scanner.next();
 
@@ -70,12 +86,12 @@ public class AplikasiCatatan {
         scanner.nextLine(); // Consuming the \n character from the previous next() call
         String isi = scanner.nextLine();
 
-        Catatan catatan = new Catatan(judul, isi);
+        Catatan catatan = new IsiCatatan(judul, isi);
         daftarCatatan.add(catatan);
         System.out.println("Catatan berhasil ditambahkan!");
     }
 
-    private static void lihatCatatan() {
+    protected static void lihatCatatan() {
         if (daftarCatatan.isEmpty()) {
             System.out.println("Tidak ada catatan yang tersedia.");
             return;
@@ -98,7 +114,7 @@ public class AplikasiCatatan {
         }
     }
 
-    private static void hapusCatatan() {
+    protected static void hapusCatatan() {
         if (daftarCatatan.isEmpty()) {
             System.out.println("Tidak ada catatan yang tersedia.");
             return;

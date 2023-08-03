@@ -142,4 +142,4 @@ public class AplikasiCatatan {
 //anggota
 //1.Faizal Duta
 //2.Feldo Razzan Susdiantoro
-//3.
+//3.Ferdy Faridhusen

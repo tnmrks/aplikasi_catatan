@@ -83,7 +83,7 @@ public class AplikasiCatatan {
         String judul = scanner.next();
 
         System.out.print("Masukkan isi catatan: ");
-        scanner.nextLine(); // Consuming the \n character from the previous next() call
+        scanner.nextLine(); // Mengkonsumsi karakter \n dari panggilan next() sebelumnya
         String isi = scanner.nextLine();
 
         Catatan catatan = new IsiCatatan(judul, isi);
